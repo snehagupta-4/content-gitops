@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello
+  namespace: lasample
+  labels:
+    app: hello
+spec:
+  replicas: 1
+  selector:
+    matchLabels: 
+      app: hello
+  template:
+    metadata:
+      labels: 
+        hi: you
+    spec:
+      containers:
+        - name: hello
+          image: acgtes/gitops:hellov1.1
